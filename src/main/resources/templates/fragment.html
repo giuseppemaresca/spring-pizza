@@ -1,3 +1,5 @@
+
+
 <th:block th:fragment="risorse">
     <!-- Required meta tags -->
     <!-- uso il th block per creare un blocco interno per separare le parti di codice -->
@@ -9,9 +11,9 @@
 	</th:block>
 
     <th:block th:fragment="nav(current)">
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-  <img src="/img/immagine.jpg" style="height:20px"  class="px-3" alt="...">
+  <img src="/img/pizzerialogo.png" style="height:60px"  class="px-3" alt="...">
     <a class="navbar-brand" href="/">Pizzeria Onna Sufì</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,10 +23,16 @@
         <li class="nav-item">
           <a class="nav-link" th:classAppend="${current == 'pizza'} ? active : not-active" aria-current="page" href="/pizza">Le nostre Pizze</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" th:classAppend="${current == 'degrees'} ? active : not-active" href="/pizza">Lavora con noi!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:classAppend="${current == 'teachers'} ? active : not-active" href="/">Contatti</a>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Cerca una pizza </button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
@@ -43,16 +51,54 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Pizzeria Onna Sufì'
+            <i class="fas fa-gem me-3"></i>Pizzeria Pano's' Pizza
           </h6>
           <p>
-            Le migliori pizze napoletane solo da noi, siamo certificati e lavoriamo con il cuore!
+           Altro che Briatore,qua mangi e non bestemmi!
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            I nostri migliori corsi
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pizze Gourmet</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Pizze senza Glutine</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Altre pizzerie partner</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Informazioni su Napoli</a>
+          </p>
+        </div>
+        <!-- Grid column -->
 
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Link utili
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Prezzi</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Opzioni</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ordina Online</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Aiuto!</a>
+          </p>
+        </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
@@ -61,13 +107,13 @@
           <h6 class="text-uppercase fw-bold mb-4">
             I nostri contatti:
           </h6>
-          <p><i class="fas fa-home me-3"></i> Via Pasquale Ciccarelli 2</p>
+          <p><i class="fas fa-home me-3"></i> Via Pasquale Ciccarelli 2 ,Barra ,Napoli</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            pizzeriaonnasufi@gmail.com
+            pizzeria onna sufì@gmail.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> 081 572 70 56</p>
- 
+          <p><i class="fas fa-phone me-3"></i> 081 5418148148</p>
+          <p><i class="fas fa-print me-3"></i> 359559595754</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -85,4 +131,3 @@
 </footer>
 <!-- Footer -->
  </th:block>
-

@@ -3,17 +3,18 @@
 <head>
    <div th:replace="fragment :: risorse"></div>
    
-    <title>Elenco pizze</title>
+    <title>Le nostre pizze</title>
 </head>
 <body>
     <div th:replace="fragment :: nav(homePage)"></div>
     
     <div class="container">
-    	<h1 class="text-center">Ecco la lista pizze!</h1>
-    	<div th:if="${#lists.isEmpty(DepartmentsList)}">
-        <h1>Mi dispiace ma la lista è vuota!</h1>
+    	<h1 class="text-center">Ecco a te la nostra lista delle pizze pizze</h1>
+    	<a class="btn btn-dark" th:href="@{/edit}">Aggiungi una pizza che più ti aggrada</a>
+    	<div th:if="${#lists.isEmpty(PizzaList)}">
+        <h1>Mi dispiace ma sei a dieta!</h1>
       </div>
-      <div th:unless="${#lists.isEmpty(DepartmentsList)}">
+      <div th:unless="${#lists.isEmpty(PizzaList)}">
         <table class="table">
           <thead>
             <tr>
@@ -23,7 +24,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="p : ${DepartmentsList} ">
+            <tr th:each="p : ${PizzaList} ">
               <td class="table-success" th:text="${p.getNome()}"></td>
               <td class="table-danger" th:text="${p.getDescrizione()}"></td>
               <td class="table-warning" th:text="${p.getPrezzo()}"></td>
