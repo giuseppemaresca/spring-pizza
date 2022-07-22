@@ -1,50 +1,65 @@
 package jana60.model;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
-@Entity
-@Table(name="pizza")
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
+@Entity
+@Table(name = "pizza")
 public class Pizza {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@NotEmpty(message = "Questo campo non può essere vuoto")
+	@Column(unique = true)
 	private String nome;
+	@NotEmpty(message = "Questo campo non può essere vuoto")
 	private String descrizione;
-	private Double prezzo;
+
+	@NotNull(message = "Devi scrivere il prezzo!")
+	@Min(value = 1)
+	private float prezzo;
+
+	// Getter and Setters
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getDescrizione() {
 		return descrizione;
 	}
+
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public Double getPrezzo() {
+
+	public float getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(Double prezzo) {
+
+	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-	
-	
-	
-	
-	
 
 }

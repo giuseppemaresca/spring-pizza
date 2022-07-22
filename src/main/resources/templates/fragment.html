@@ -1,133 +1,90 @@
-
-
 <th:block th:fragment="risorse">
-    <!-- Required meta tags -->
-    <!-- uso il th block per creare un blocco interno per separare le parti di codice -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Required meta tags -->
+	<!-- uso il th block per creare un blocco interno per separare le parti di codice -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	</th:block>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/9d7208a428.js" crossorigin="anonymous"></script>
+</th:block>
 
-    <th:block th:fragment="nav(current)">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-  <img src="/img/pizzerialogo.png" style="height:60px"  class="px-3" alt="...">
-    <a class="navbar-brand" href="/">Pizzeria Onna Sufì</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" th:classAppend="${current == 'pizza'} ? active : not-active" aria-current="page" href="/pizza">Le nostre Pizze</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:classAppend="${current == 'degrees'} ? active : not-active" href="/pizza">Lavora con noi!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:classAppend="${current == 'teachers'} ? active : not-active" href="/">Contatti</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-    </th:block>
-    
-    <th:block th:fragment="footer">
-<!-- Footer -->
-<footer class="bg-dark text-center text-lg-start bg-light text-muted">
-  <!-- Section: Links  -->
-  <section class="" >
-    <div class="container text-center text-md-start mt-5 ">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Pizzeria Pano's' Pizza
-          </h6>
-          <p>
-           Altro che Briatore,qua mangi e non bestemmi!
-          </p>
-        </div>
-        <!-- Grid column -->
+<th:block th:fragment="nav(current)">
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+		<div class="container-fluid">
+			<img src="/img/freshly-baked-vegetables-mushroom-pizza-transparent-background_670625-104.jpg"
+				style="height:60px" class="px-3" alt="...">
+			<a class="navbar-brand text-light" href="/">Pizzeria Onna Sufi!</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link text-light" th:classAppend="${current == 'pizza'} ? active : not-active"
+							aria-current="page" href="/pizza">Le nostre Pizze</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+</th:block>
 
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            I nostri migliori corsi
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Pizze Gourmet</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Pizze senza Glutine</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Altre pizzerie partner</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Informazioni su Napoli</a>
-          </p>
-        </div>
-        <!-- Grid column -->
+<th:block th:fragment="footer">
+	<!-- Footer -->
+	<footer class="bg-warning text-center text-lg-start bg-warning text-muted">
+		<!-- Section: Links  -->
+		<section class="">
+			<div class="container text-center text-md-start mt-5 ">
+				<!-- Grid row -->
+				<div class="row mt-3">
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+						<!-- Content -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							<i class="fas fa-gem me-3"></i>Pizzeria Onna Sufì
+						</h6>
+						<p>
+							Le pizze napoletane fatte come la tradizione comanda! At che Briatore!
+						</p>
+					</div>
+					<!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Link utili
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Prezzi</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Opzioni</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Ordina Online</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Aiuto!</a>
-          </p>
-        </div>
-        <!-- Grid column -->
+					<!-- Grid column -->
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							I nostri migliori corsi
+						</h6>
+						<p>
+							<a href="#!" class="text-reset">Pizze Gourmet</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Pizze senza Glutine</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Altre pizzerie partner</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Informazioni su Napoli</a>
+						</p>
+					</div>
+					<!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            I nostri contatti:
-          </h6>
-          <p><i class="fas fa-home me-3"></i> Via Pasquale Ciccarelli 2 ,Barra ,Napoli</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            pizzeria onna sufì@gmail.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> 081 5418148148</p>
-          <p><i class="fas fa-print me-3"></i> 359559595754</p>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
 
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="/">www.pizzeriaonnasufi.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
- </th:block>
+					<!-- Grid column -->
+				</div>
+				<!-- Grid row -->
+			</div>
+		</section>
+		<!-- Section: Links  -->
+	</footer>
+	<!-- Footer -->
+</th:block>

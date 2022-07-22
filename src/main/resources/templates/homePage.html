@@ -9,29 +9,9 @@
     <div th:replace="fragment :: nav(homePage)"></div>
     
     <div class="container">
-    	<h1 class="text-center">Ecco la lista delle nostre pizze</h1>
+    	<h1 class="text-center">Benvenuti da Onna Sufì</h1>
+    	<img class="img-fluid rounded mx-auto d-block" src="/img/immagine.jpg"> 
     </div>
-    <div th:if="${#lists.isEmpty(DepartmentsList)}">
-        <h1>Mi dispiace ma la lista è vuota!</h1>
-      </div>
-      <div th:unless="${#lists.isEmpty(DepartmentsList)}">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col" class="table-dark">Nome</th>
-              <th scope="col" class="table-dark">Descrizione</th>
-              <th scope="col" class="table-dark">Prezzo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="p : ${DepartmentsList} ">
-              <td class="table-success" th:text="${p.getNome()}"></td>
-              <td class="table-danger" th:text="${p.getDescrizione()}"></td>
-              <td class="table-warning" th:text="${p.getPrezzo()}"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
     <div th:replace="fragment :: footer"> </div>
 </body>
