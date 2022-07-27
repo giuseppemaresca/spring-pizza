@@ -1,10 +1,15 @@
 package jana60.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -27,6 +32,13 @@ public class Pizza {
 	@NotNull(message = "Devi scrivere il prezzo!")
 	@Min(value = 1)
 	private float prezzo;
+
+	@ManyToMany
+	@JoinTable
+	(name = "pizza_ingredienti", joinColumns = { @JoinColumn(name = "pizza_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "ingredienti_id") })
+					
+	private List<Ingrediente> ingredientiPizza;
 
 	// Getter and Setters
 
