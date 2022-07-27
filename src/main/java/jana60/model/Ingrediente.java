@@ -1,9 +1,12 @@
 package jana60.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -18,7 +21,9 @@ public class Ingrediente
 	
 	@NotBlank
 	private String nome;
-
+	
+	@ManyToMany(mappedBy = "ingrediente")
+	List<Pizza> pizze;
 
 	//GETTER & SETTER
 	

@@ -38,12 +38,20 @@ public class Pizza {
 	(name = "pizza_ingredienti", joinColumns = { @JoinColumn(name = "pizza_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "ingredienti_id") })
 					
-	private List<Ingrediente> ingredientiPizza;
+	private List<Ingrediente> ingrediente;
 
 	// Getter and Setters
 
 	public Integer getId() {
 		return id;
+	}
+
+	public List<Ingrediente> getIngrediente() {
+		return ingrediente;
+	}
+
+	public void setIngrediente(List<Ingrediente> ingrediente) {
+		this.ingrediente= ingrediente;
 	}
 
 	public void setId(Integer id) {

@@ -21,13 +21,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jana60.model.Pizza;
 import jana60.repository.PizzaRepository;
-
+import jana60.repository.IngredienteRepository;
 @Controller
 @RequestMapping("/")
 public class MenuController {
 
 	@Autowired
 	private PizzaRepository repo;
+	@Autowired
+	private IngredienteRepository repo2;
 
 	@GetMapping("/pizza")
 	public String pizza(Model model) {
@@ -39,6 +41,7 @@ public class MenuController {
 	@GetMapping("/edit")
 	public String pizzaForm(Model model) {
 		model.addAttribute("pizza", new Pizza());
+		model.addAttribute("listaIngrediente", repo2.findAllByOrderByNome());
 		return "edit";
 	}
 
